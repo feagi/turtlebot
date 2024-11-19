@@ -11,7 +11,6 @@ var _registration_agent: FEAGI_RegistrationAgent_Sensory
 func _ready() -> void:
 	if autoregister_on_start:
 		if not FEAGI.is_ready_for_device_registration():
-			register_IRDistanceBeam()
 			await FEAGI.ready_for_registration_agent_registration
 		register_IRDistanceBeam()
 
