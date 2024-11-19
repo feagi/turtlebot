@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://76swpw6vkqmf"]
+
+[ext_resource type="Script" path="res://turtle_bot/turtle_bot.gd" id="1_tqup1"]
+[ext_resource type="Script" path="res://addons/FeagiIntegration/RunTime/VirtualDevices/Sensors/FEAGI_Device_Sensor_IRDistanceBeam.gd" id="2_buemh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgj67"]
+albedo_color = Color(0.196078, 0.196078, 0.254902, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7qe2u"]
+material = SubResource("StandardMaterial3D_xgj67")
+height = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j8yts"]
+height = 0.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lmall"]
+top_radius = 0.125
+bottom_radius = 0.125
+height = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e55pw"]
+top_radius = 0.125
+bottom_radius = 0.125
+height = 0.1
+
+[node name="TurtleBot" type="VehicleBody3D" groups=["TurtleBot"]]
+mass = 3.3
+linear_damp = 3.0
+angular_damp = 3.0
+script = ExtResource("1_tqup1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_7qe2u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_j8yts")
+
+[node name="POV Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.5, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="POV Camera"]
+light_color = Color(1, 0.870588, 0.705882, 1)
+light_energy = 0.6
+sky_mode = 1
+
+[node name="Bottom Sensor" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+projection = 1
+size = 2.0
+
+[node name="Front Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.05, -0.3)
+use_as_traction = true
+wheel_radius = 0.125
+wheel_friction_slip = 1.0
+suspension_stiffness = 50.0
+suspension_max_force = 40.0
+
+[node name="Front Wheel" type="MeshInstance3D" parent="Front Wheel"]
+transform = Transform3D(1, -1.50996e-07, 8.74228e-08, -1.50996e-07, -1, -8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_lmall")
+skeleton = NodePath("../..")
+
+[node name="Left Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.3, -0.05, 0)
+use_as_traction = true
+wheel_radius = 0.125
+wheel_friction_slip = 1.0
+suspension_stiffness = 30.0
+suspension_max_force = 40.0
+
+[node name="Left Wheel" type="MeshInstance3D" parent="Left Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e55pw")
+
+[node name="Right Wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.3, -0.05, 0)
+use_as_traction = true
+wheel_radius = 0.125
+wheel_friction_slip = 1.0
+suspension_stiffness = 30.0
+suspension_max_force = 40.0
+
+[node name="Right Wheel" type="MeshInstance3D" parent="Right Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e55pw")
+skeleton = NodePath("../..")
+
+[node name="Right Sensor" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+target_position = Vector3(1, 0, 0)
+script = ExtResource("2_buemh")
+proximity_sensor_name = &"Right Sensor"
+
+[node name="Left Sensor" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+target_position = Vector3(-1, 0, 0)
+script = ExtResource("2_buemh")
+proximity_sensor_name = &"Left Sensor"
+
+[node name="Back Sensor" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+target_position = Vector3(0, 0, 1)
+script = ExtResource("2_buemh")
+proximity_sensor_name = &"Back Sensor"
+
+[node name="Front Sensor" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+target_position = Vector3(0, 0, -1)
+script = ExtResource("2_buemh")
+proximity_sensor_name = &"Front Sensor"
