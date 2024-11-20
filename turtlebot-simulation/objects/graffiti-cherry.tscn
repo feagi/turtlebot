@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj2ifmti0v8f2"]
 
-[ext_resource type="Texture2D" uid="uid://vn3t2eg1p8r4" path="res://textures/delicious-berries-table.png" id="1_7dmws"]
+[ext_resource type="Texture2D" uid="uid://vn3t2eg1p8r4" path="res://textures/fruits/berries.png" id="1_7dmws"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urxsq"]
 transparency = 1

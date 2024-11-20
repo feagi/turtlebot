@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://mm3uvhaqhxql"]
 
-[ext_resource type="Texture2D" uid="uid://b0x1s7y733ukm" path="res://textures/single-banana-isolated-white-background.png" id="1_v0mvg"]
+[ext_resource type="Texture2D" uid="uid://b0x1s7y733ukm" path="res://textures/fruits/bannana.png" id="1_v0mvg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmskw"]
 transparency = 1

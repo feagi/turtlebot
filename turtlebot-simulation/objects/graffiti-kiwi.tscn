@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce8jfgpuj7aei"]
 
-[ext_resource type="Texture2D" uid="uid://b8psjv35hym5a" path="res://textures/fresh-kiwi-fruit-isolated.png" id="1_8hvyo"]
+[ext_resource type="Texture2D" uid="uid://b8psjv35hym5a" path="res://textures/fruits/kiwi.png" id="1_8hvyo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urxsq"]
 transparency = 1
