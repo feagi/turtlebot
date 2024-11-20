@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
-@export var engine_force_value := 10.0
-@export var turn_speed := 0.75
+@export var engine_force_value := 200
+@export var turn_speed := 750
 @export var brake_strength = 0.08
 @onready var left_wheel = $"Left Wheel"
 @onready var right_wheel = $"Right Wheel"
