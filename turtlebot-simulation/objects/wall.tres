@@ -1,6 +1,6 @@
 [gd_resource type="BoxMesh" load_steps=3 format=3 uid="uid://b1rhb437nbm8b"]
 
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_iobic"]
+[ext_resource type="Shader" path="res://flexible_toon_shader/flexible_toon.gdshader" id="1_iobic"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dfo6j"]
 render_priority = 0

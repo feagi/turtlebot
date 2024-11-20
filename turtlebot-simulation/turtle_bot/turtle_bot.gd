@@ -27,31 +27,31 @@ func _physics_process(delta: float):
 		right_wheel.engine_force = -Input.get_action_strength("move_backward") * engine_force_value
 	
 	# forward and right
-	if Input.is_action_pressed("rotate_right") and Input.is_action_pressed("move_forward"):
-		left_wheel.engine_force = Input.get_action_strength("rotate_right") * engine_force_value
-		right_wheel.engine_force = Input.get_action_strength("rotate_right") * 0.4 * engine_force_value
+	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("move_forward"):
+		left_wheel.engine_force = Input.get_action_strength("ui_right") * engine_force_value
+		right_wheel.engine_force = Input.get_action_strength("ui_right") * 0.4 * engine_force_value
 	
 	# backward and right
-	elif Input.is_action_pressed("rotate_right") and Input.is_action_pressed("move_backward"):
-		left_wheel.engine_force = -Input.get_action_strength("rotate_right") * engine_force_value
-		right_wheel.engine_force = -Input.get_action_strength("rotate_right") * 0.4 * engine_force_value
+	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("move_backward"):
+		left_wheel.engine_force = -Input.get_action_strength("ui_right") * engine_force_value
+		right_wheel.engine_force = -Input.get_action_strength("ui_right") * 0.4 * engine_force_value
 	
 	# right
-	elif Input.is_action_pressed("rotate_right"):
-		left_wheel.engine_force = Input.get_action_strength("rotate_right") * turn_speed * engine_force_value
-		right_wheel.engine_force = -Input.get_action_strength("rotate_right") * turn_speed * engine_force_value
+	elif Input.is_action_pressed("ui_right"):
+		left_wheel.engine_force = Input.get_action_strength("ui_right") * turn_speed * engine_force_value
+		right_wheel.engine_force = -Input.get_action_strength("ui_right") * turn_speed * engine_force_value
 	
 	# forward and left
-	if Input.is_action_pressed("rotate_left") and Input.is_action_pressed("move_forward"):
-		left_wheel.engine_force = Input.get_action_strength("rotate_left") * 0.4 * engine_force_value
-		right_wheel.engine_force = Input.get_action_strength("rotate_left") * engine_force_value
+	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("move_forward"):
+		left_wheel.engine_force = Input.get_action_strength("ui_left") * 0.4 * engine_force_value
+		right_wheel.engine_force = Input.get_action_strength("ui_left") * engine_force_value
 	
 	# backward and left
-	elif Input.is_action_pressed("rotate_left") and Input.is_action_pressed("move_backward"):
-		left_wheel.engine_force = -Input.get_action_strength("rotate_left") * 0.4 * engine_force_value
-		right_wheel.engine_force = -Input.get_action_strength("rotate_left") * engine_force_value
+	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("move_backward"):
+		left_wheel.engine_force = -Input.get_action_strength("ui_left") * 0.4 * engine_force_value
+		right_wheel.engine_force = -Input.get_action_strength("ui_left") * engine_force_value
 	
 	# left
-	elif Input.is_action_pressed("rotate_left"):
-		left_wheel.engine_force = -Input.get_action_strength("rotate_left") * turn_speed * engine_force_value
-		right_wheel.engine_force = Input.get_action_strength("rotate_left") * turn_speed * engine_force_value
+	elif Input.is_action_pressed("ui_left"):
+		left_wheel.engine_force = -Input.get_action_strength("ui_left") * turn_speed * engine_force_value
+		right_wheel.engine_force = Input.get_action_strength("ui_left") * turn_speed * engine_force_value

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxg5o7r64uugx"
+path="res://.godot/imported/cup.obj-e7febfdf0aa1242c0c1a7c665b78d75f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cup.obj-e7febfdf0aa1242c0c1a7c665b78d75f.mesh"]
+
+source_file="res://flexible_toon_shader/example/cup.obj"
+dest_files=["res://.godot/imported/cup.obj-e7febfdf0aa1242c0c1a7c665b78d75f.mesh", "res://.godot/imported/cup.obj-e7febfdf0aa1242c0c1a7c665b78d75f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

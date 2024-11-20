@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cve1cm3g42q4i"]
 
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_ywsvg"]
+[ext_resource type="Shader" path="res://flexible_toon_shader/flexible_toon.gdshader" id="1_ywsvg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s221y"]
 render_priority = 0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dohgoe7vvjbpl"]
 
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_un741"]
+[ext_resource type="Shader" path="res://flexible_toon_shader/flexible_toon.gdshader" id="1_un741"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_caxto"]
 render_priority = 0
