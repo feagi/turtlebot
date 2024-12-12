@@ -1,14 +1,39 @@
-[gd_resource type="Resource" script_class="FEAGI_Genome_Mapping" load_steps=12 format=3 uid="uid://ds8rvrrufrqyj"]
+[gd_resource type="Resource" script_class="FEAGI_Genome_Mapping" load_steps=17 format=3 uid="uid://ds8rvrrufrqyj"]
 
 [ext_resource type="Script" path="res://addons/FeagiIntegration/InputEmulation/FEAGI_EmuInput_Abstract.gd" id="1_b6vab"]
+[ext_resource type="Script" path="res://addons/FeagiIntegration/InputEmulation/FEAGI_EmuInput_GodotInputEvent.gd" id="2_sebv2"]
 [ext_resource type="Script" path="res://addons/FeagiIntegration/FEAGI IOConnectors/Motor/FEAGI_IOConnector_Motor_MotionControl.gd" id="3_q8qsm"]
 [ext_resource type="Script" path="res://addons/FeagiIntegration/Configuration/FEAGI_Genome_Mapping.gd" id="4_nfpls"]
 [ext_resource type="Script" path="res://addons/FeagiIntegration/FEAGI IOConnectors/Sensor/FEAGI_IOConnector_Sensor_Camera.gd" id="5_inqky"]
 [ext_resource type="Script" path="res://addons/FeagiIntegration/FEAGI IOConnectors/Sensor/FEAGI_IOConnector_Sensor_Proximity.gd" id="6_smicu"]
 
+[sub_resource type="Resource" id="Resource_yc0la"]
+script = ExtResource("2_sebv2")
+use_bang_bang_instead_of_actual_value = true
+bang_bang_threshold = 0.5
+godot_input_event_name = &"move_forward"
+
+[sub_resource type="Resource" id="Resource_mw3xd"]
+script = ExtResource("2_sebv2")
+use_bang_bang_instead_of_actual_value = true
+bang_bang_threshold = 0.5
+godot_input_event_name = &"move_backward"
+
+[sub_resource type="Resource" id="Resource_xhkcr"]
+script = ExtResource("2_sebv2")
+use_bang_bang_instead_of_actual_value = true
+bang_bang_threshold = 0.5
+godot_input_event_name = &"rotate_left"
+
+[sub_resource type="Resource" id="Resource_y8eos"]
+script = ExtResource("2_sebv2")
+use_bang_bang_instead_of_actual_value = true
+bang_bang_threshold = 0.5
+godot_input_event_name = &"rotate_right"
+
 [sub_resource type="Resource" id="Resource_e65au"]
 script = ExtResource("3_q8qsm")
-InputEmulators = Array[ExtResource("1_b6vab")]([])
+InputEmulators = Array[ExtResource("1_b6vab")]([SubResource("Resource_yc0la"), SubResource("Resource_mw3xd"), SubResource("Resource_xhkcr"), SubResource("Resource_y8eos"), null, null, null, null, null, null, null, null])
 device_friendly_name = &"motion_control 0"
 FEAGI_index = 0
 device_ID = 0
