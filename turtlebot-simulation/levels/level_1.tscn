@@ -80,3 +80,5 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.00888,
 offset_left = 560.0
 offset_right = 660.0
 scale = Vector2(1.6, 1.6)
+
+[editable path="TurtleBot"]
